@@ -101,24 +101,27 @@ function comprueba(e) {
 
 function operacionNueva(numAnterior) {
     document.querySelector('#jugar').style.display = "none";
-    var nvoNumero,
+    var nvoNumero1,
+        nvoNumero2,
         op, carOp,
         preg;
-    nvoNumero = numAleatorio(20, 80);
+    nvoNumero1 = numAleatorio(20, 80);
+        nvoNumero2 = numAleatorio(0, 100);
+
     op = numAleatorio(1, 2);
     switch (op) {
         case 1:
             carOp = "+";
-            resultado = numAnterior + nvoNumero;
+            resultado =   nvoNumero2 + nvoNumero1;
             break;
 
         case 2:
             carOp = "-";
-            resultado = numAnterior - nvoNumero;
+            resultado =   nvoNumero2 - nvoNumero1;
             break;
     }
     console.log(resultado);
-    preg = numAnterior + " " + " " + carOp + " " + nvoNumero + " =";
+    preg =   nvoNumero2 + " " + " " + carOp + " " + nvoNumero1 + " =";
     document.querySelector('#pregunta').innerHTML = preg;
 }
 
